@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js",
+    "dev": "nodemon server.js",
     "ui": "browser-sync start --proxy localhost:3003 --files=**  --ignore=node_modules --reload-delay 500 --no-ui --no-inject-changes"
   },
   "keywords": [],
