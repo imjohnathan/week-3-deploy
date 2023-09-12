@@ -1,0 +1,23 @@
+{
+  "name": "week-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "ui": "browser-sync start --proxy localhost:3003 --files=**  --ignore=node_modules --reload-delay 500 --no-ui --no-inject-changes"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "nodemon": "^3.0.1"
+  }
+}

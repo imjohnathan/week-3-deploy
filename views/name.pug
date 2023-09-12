@@ -1,0 +1,21 @@
+doctype
+html(lang='zh-TW')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(href='https://cdn.master.co/normal.css', rel='stylesheet')
+        script(src='https://cdn.master.co/css') 
+        title What's Your Name?
+    body
+        div(class='grid place-items:center h:100vh')
+            div(class='w:60%')
+                if name
+                    h1 Hi, #{name}
+                    a(href='/myName?goodbye', class='inline-block mt:20px bg:#18181C f:white p:8px|16px r:6px f:bolder f:14px') Goodbye
+                else 
+                    form(action="/trackName", method="get") 
+                        label(class='block mb:8px opacity:.7 f:bolder') Please Enter Your Name :
+                        input(type='text', name='name', class='block border:1px|solid|#e4e4e7 r:6px py:8px px:12px f:16px w:full outline:2px|solid|transparent shadow:0|0|gray-70:focus-visible')
+                        button(type='submit', class='block mt:20px bg:#18181C f:white p:8px|16px r:6px f:bolder f:14px') Send
+
