@@ -19,16 +19,23 @@ app.get('/', (req, res) => {
 
 // Assignment 2: Build Backend API for Front-End
 app.get('/getData', (req, res) => {
+
+    function sumNumber(num) {
+        let sum = 0
+        for (let i = 1; i <= +num; i++) {
+            sum = sum + i
+        }
+        return sum
+    }
+
     //get the number from the request query
     const { number } = req.query
     //if number have value
     if (number) {
         //first use "+" to convert the number query to a real number, if it is not a number it will output "NaN" and use isNaN to check. Since we need positive int so get rid of negative int
-        if (!isNaN(+number) && +number > 0) {
-            //c. show "55" when a user enters "10"
-            if (+number === 10) return res.send('55')
+        if (!isNaN(+number) && +number >= 0) {
             //1+2+....+ POSITIVE_INTEGER in the page.
-            return res.send(`1+2+...+${number}`)
+            return res.send(`${sumNumber(number)}`)
         } else {
             // if the number not correct, give http a error code 400
             return res.status(400).send("Wrong Parameter")
@@ -46,7 +53,7 @@ app.get('/myName', (req, res) => {
     const { name } = req.cookies
 
     //additional clear the cookie
-    if (req.query.hasOwnProperty('goodbye')) {
+    if (Object.hasOwn(req.query, 'goodbye')) {
         res.clearCookie('name')
         return res.redirect('/myName')
     }

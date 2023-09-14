@@ -8,6 +8,7 @@ button.addEventListener('click', async (e) => {
     const inputData = input.value;
     message.classList.remove('f:red-60');
     message.innerText = ""; //clear the msg text
+    const buttonText = button.innerText
 
     //give button a loading state and lock the button
     button.innerText = "Loading..."
@@ -36,7 +37,7 @@ button.addEventListener('click', async (e) => {
     } finally {
 
         //recover button from the loading state
-        button.innerText = "Send"
+        button.innerText = buttonText;
         button.disabled = false;
         button.classList.remove("opacity:70%");
     }
